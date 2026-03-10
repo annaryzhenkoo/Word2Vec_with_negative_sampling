@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>Word Embeddings Map</title>
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Visualization of the 190 most frequent words</h1>
+
+<iframe
+    src="top_words_map.html"
+    width="1100"
+    height="850"
+    style="border:none; display:block; margin:auto;">
+</iframe>
+
+<p style="text-align:center; max-width:800px; margin:auto;">
+The figure shows a visualization of the 190 most frequent words. Several semantic
+clusters can be observed: for instance, weekdays are grouped closely together,
+while weekend days appear slightly separated. Additionally, there is a noticeable
+cluster related to the Olympics and sports.
+</p>
+
+<h1 style="text-align:center;">Clusterization</h1>
+
+<iframe
+        src="clusters_map.html"
+        width="1000"
+        height="600"
+        style="border:none; display:block; margin:auto;">
+</iframe>
+
+<p style="text-align:center; max-width:800px; margin:auto;">
+        In this experiment, I manually selected several semantic groups of words
+        (days of the week, months, directions, colors, and animals). Their
+        Word2Vec embeddings were extracted and clustered using the KMeans
+        algorithm and visualized in two dimensions.
+
+        As shown in the figure, the days of the week form a clear cluster.
+        Similarly, most of the months are located close to each other,
+        indicating that the embeddings capture their semantic similarity.
+
+        An interesting observation is that the word May appears relatively
+        far from the other months due to its ambiguity as a modal verb.
+</p>
+
+<h1 style="text-align:center;">Country and Capital relations</h1>
+
+<iframe
+        src="capital_relationships.html"
+        width="850"
+        height="650"
+        style="border:none; display:block; margin:auto;">
+</iframe>
+
+<p style="text-align:center; max-width:800px; margin:auto;">
+PCA projection of country and capital word embeddings showing consistent vector relationships between countries and their capitals.
+</p>
+
+<h1 style="text-align:center;">Comparative relations</h1>
+
+<iframe
+        src="comparative_relations.html"
+        width="1000"
+        height="850"
+        style="border:none; display:block; margin:auto;">
+</iframe>
+
+<p style="text-align:center; max-width:800px; margin:auto;">
+        In this experiment, we examine how Word2Vec captures relationships between adjectives and their comparative and superlative forms. The embeddings of several adjective triplets (base, comparative, and superlative) were projected into two dimensions using PCA.
+
+As shown in the figure, many adjective triplets appear relatively close to each other in the embedding space, suggesting that Word2Vec captures the relationship between different degrees of comparison. In several cases, the points representing the base, comparative, and superlative forms follow a similar directional pattern.
+
+However, there are also some outliers. For example, the adjective high appears noticeably farther from its related forms compared to the other triplets, indicating that this relationship is not captured as consistently for all words.
+</p>
+
+<h1 style="text-align:center;">Plural relations</h1>
+
+<iframe
+        src="plural_relations.html"
+        width="1110"
+        height="900"
+        style="border:none; display:block; margin:auto;">
+</iframe>
+
+<p style="text-align:center; max-width:800px; margin:auto;">
+        In this experiment, we examine the relationship between singular and plural nouns in the Word2Vec embedding space. The vectors for several singular-plural word pairs were projected into two dimensions using PCA.
+
+As shown in the figure, the vectors connecting singular and plural forms are not identical in length, and therefore they do not form perfectly consistent algebraic transformations across all words. This means that simple vector operations (for example, applying the same offset between unrelated words) would not always produce accurate results.
+
+Nevertheless, most of the vectors point in a similar direction, indicating that the model captures a consistent transformation from singular to plural forms. Interestingly, this pattern also appears for irregular forms such as mouse -> mice, where the plural is not formed by simply adding -s.
+
+However, there are also some outliers. For example, the pair city -> cities deviates noticeably from the general pattern and appears much farther away in the projection.
+</p>
+
+
+</body>
+</html>
