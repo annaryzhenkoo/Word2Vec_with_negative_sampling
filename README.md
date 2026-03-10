@@ -40,7 +40,7 @@ The learned embeddings are evaluated through several experiments:
 * Semantic clustering of related words
 * Analysis of morphological patterns (e.g., singular–plural forms)
 
-The notebook includes interactive visualizations. For the best viewing experience, it is recommended to run the notebook in Google Colab.
+You can find visualization here - https://annaryzhenkoo.github.io/Word2Vec_with_negative_sampling/
 
 ---
 
